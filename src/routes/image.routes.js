@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { Router } = require('express');
 const router = new Router();
 
@@ -22,11 +23,9 @@ router.post('/images/upload', (req, res) => {
             return res.send(err);
         }
         console.log(req.file);
-        res.send('uploaded');
+        res.send(process.env.URI_FILE + "/upload/" + req.file.originalname);
     });
 });
-
-router.get('/images', (req, res) => {});
 
 
 module.exports = router;
