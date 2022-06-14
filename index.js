@@ -25,7 +25,7 @@ app.use(function(req, res, next) {
 });
 
 // Routes
-app.use(require('./routes/image.routes'));
+app.use(require('./src/routes/image.routes'));
 
 // Static files
 app.use("/upload", express.static(path.join(__dirname, 'public')));
