@@ -28,7 +28,7 @@ app.use(function(req, res, next) {
 app.use(require('./src/routes/image.routes'));
 
 // Static files
-app.use("/upload", express.static(path.join(__dirname, 'public')));
+app.use("/upload", express.static(path.join(__dirname, '/src/public')));
 
 // Start the server
 app.listen(app.get('port'), () => {

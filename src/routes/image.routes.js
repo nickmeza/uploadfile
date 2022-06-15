@@ -26,6 +26,9 @@ router.post('/images/upload', (req, res) => {
         res.send(process.env.URI_FILE + "/upload/" + req.file.originalname);
     });
 });
+router.get('/', (req, res) => {
+    res.send({"response":"Fuciona Correctamente"});
+});
 
 
 module.exports = router;
