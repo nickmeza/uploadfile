@@ -7,11 +7,11 @@ const path = require('path');
 const app = express();
 
 // Settings
-app.set('port', process.env.SERVER_PORT || 4000);
+app.set('port', process.env.PORT || process.env.SERVER_PORT || 4000);
 
 //permisos
-app.use(function(req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", [process.env.URI_BACKEND,"*"]);
+app.use(function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", process.env.URI_BACKEND);
     res.setHeader(
         "Access-Control-Allow-Methods",
         "GET, POST"
